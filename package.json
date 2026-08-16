@@ -1,14 +1,38 @@
 {
   "name": "react-developer-toolkit",
   "displayName": "React Developer toolkit",
-  "description": "Developer utilities for React and TypeScript",
+  "description": "A VS Code extension that helps React developers identify common code issues and improve code quality.",
   "version": "0.0.1",
+  "publisher": "rashmipanday06",
+  "license": "SEE LICENSE IN LICENSE",
+  "author": {
+    "name": "Rashmi panday"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rashmipanday06/react-developer-toolkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rashmipanday06/react-developer-toolkit/issues"
+  },
+  "homepage": "https://github.com/rashmipanday06/react-developer-toolkit",
+  "keywords": [
+    "react",
+    "javascript",
+    "typescript",
+    "developer-tools",
+    "code-quality",
+    "vscode",
+    "linting"
+  ],
+  "categories": [
+    "Linters",
+    "Programming Languages",
+    "Other"
+  ],
   "engines": {
     "vscode": "^1.125.0"
   },
-  "categories": [
-    "Other"
-  ],
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
@@ -19,23 +43,24 @@
       }
     ]
   },
-  "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src",
-    "test": "vscode-test"
-  },
+"scripts": {
+  "vscode:prepublish": "npm run compile",
+  "compile": "tsc -p ./",
+  "watch": "tsc --watch -p ./",
+  "lint": "eslint src",
+  "test": "npm run compile && npm run lint && vscode-test",
+  "check": "npm test"
+},
   "devDependencies": {
-    "@types/vscode": "^1.125.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "24.x",
-    "typescript-eslint": "^8.61.1",
+    "@types/vscode": "^1.125.0",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.0.0",
+    "@vscode/vsce": "^3.9.2",
     "eslint": "^10.5.0",
     "typescript": "^6.0.3",
-    "@vscode/test-cli": "^0.0.15",
-    "@vscode/test-electron": "^3.0.0"
+    "typescript-eslint": "^8.61.1"
   },
   "overrides": {
     "diff": "^8.0.4",
